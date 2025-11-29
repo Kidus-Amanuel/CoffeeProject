@@ -1,11 +1,21 @@
-import React from 'react';
-import { Helmet } from "react-helmet-async";
+import { useEffect } from 'react';
 
-const PageMeta = ({ title, description }) => (
-    <Helmet>
-        <title>{title} | Coffee Export</title>
-        <meta name="description" content={description} />
-    </Helmet>
-);
+const PageMeta = ({ title, description }) => {
+    useEffect(() => {
+        // Update document title
+        document.title = `${title} | Coffee Export`;
+
+        // Update or create meta description
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.name = 'description';
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.content = description;
+    }, [title, description]);
+
+    return null;
+};
 
 export default PageMeta;

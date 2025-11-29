@@ -34,7 +34,10 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-softCream">
-            <PageMeta title="Home" description="Home Page" />
+            <PageMeta
+                title="Premium Ethiopian Green Coffee Beans"
+                description="Export-quality Ethiopian green coffee beans. Direct from farmers, ECX certified, fair trade. Grade 1, Grade 2, and specialty lots available for international roasters."
+            />
             {/* Hero Section */}
             <section
                 className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-16 bg-cover bg-center bg-no-repeat"
